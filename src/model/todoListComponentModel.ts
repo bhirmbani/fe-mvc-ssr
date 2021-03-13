@@ -1,7 +1,6 @@
 import TodoModel from "./todoListModel";
 
 export interface TodoListComponentModel {
-  isModalOpened: boolean;
   todos: TodoModel[];
 }
 

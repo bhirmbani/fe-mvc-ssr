@@ -1,6 +1,10 @@
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import getTodoList from "../api/todoListAPI";
 
-export async function fetchTodoList() {
-  const result = await getTodoList();
-  return result;
-}
+export const fetchTodoList = createAsyncThunk(
+  'todoList/get',
+  async () => {
+    const response = await getTodoList()
+    return response;
+  }
+)

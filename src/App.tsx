@@ -1,16 +1,22 @@
-import './App.css';
-import TodoListView from './view/screen/todoListView';
-import UserProfileView from './view/screen/userProfileView';
+import { connect } from "react-redux";
+import "./App.css";
+import { rootReducerInterface } from "./controller/state/rootReducer";
+import TodoListView from "./view/screen/todoListView";
+import UserProfileView from "./view/screen/userProfileView";
 
-function App() {
+function App(props: { state: any }) {
   return (
     <div className="App">
       <header className="App-header">
         <TodoListView />
-        <UserProfileView />
+        <UserProfileView state={props.state} />
       </header>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state: rootReducerInterface) => ({
+  state,
+});
+
+export default connect(mapStateToProps, null)(App);
