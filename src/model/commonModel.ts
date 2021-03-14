@@ -1,3 +1,3 @@
 export interface GeneralStateModel {
-  loadingState: 'loading' | 'success' | 'error' | 'default'
+  viewState: 'loading' | 'success' | 'error' | 'default'
 } 

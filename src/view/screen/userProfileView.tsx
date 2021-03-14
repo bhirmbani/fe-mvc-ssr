@@ -6,7 +6,7 @@ export default function UserProfileView(props: rootReducerInterface) {
     <div>
       <p>User Profile view</p>
       {stateViewManager({
-        state: props.state.todoList.loadingState,
+        state: props.state.todoList.viewState,
         LoadingComponent: <p>Loading...</p>,
         SuccessComponent: <p>{props.state.todoList.todos[0].content}</p>,
         ErrorComponent: <p>Error...</p>,

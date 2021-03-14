@@ -1,7 +1,7 @@
 import { GeneralStateModel } from "../../model/commonModel";
 
 interface StateViewManager {
-  state: GeneralStateModel["loadingState"];
+  state: GeneralStateModel["viewState"];
   LoadingComponent: JSX.Element;
   ErrorComponent: JSX.Element;
   SuccessComponent: JSX.Element;

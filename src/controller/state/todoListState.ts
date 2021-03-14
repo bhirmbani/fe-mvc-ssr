@@ -10,7 +10,7 @@ export interface InitialStateTodoList extends GeneralStateModel {
 
 const initialState: InitialStateTodoList = {
   todos: todosInitialState,
-  loadingState: "default",
+  viewState: "default",
 };
 
 const TodoListSlice = createSlice({
@@ -24,13 +24,13 @@ const TodoListSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchTodoList.fulfilled, (state, action) => {
       state.todos = action.payload;
-      state.loadingState = "success";
+      state.viewState = "success";
     });
     builder.addCase(fetchTodoList.pending, (state) => {
-      state.loadingState = "loading";
+      state.viewState = "loading";
     });
     builder.addCase(fetchTodoList.rejected, (state) => {
-      state.loadingState = "error";
+      state.viewState = "error";
     });
   },
 });
